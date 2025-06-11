@@ -3,6 +3,7 @@ package com.project.telecom.rnu.services;
 import com.project.telecom.rnu.entities.Resource;
 import com.project.telecom.rnu.enumerations.OperationResponseStatus;
 import com.project.telecom.rnu.mappers.ResourceMapper;
+import com.project.telecom.rnu.repositories.CreneauRepository;
 import com.project.telecom.rnu.repositories.ResourceRepository;
 import com.project.telecom.rnu.responses.OperationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ public class ResourceService {
 
     @Autowired
     private ResourceRepository resourceRepository;
+    @Autowired
+    CreneauRepository creneauRepository;
 
     public OperationResponse createResource(Resource resource) {
         Resource saved = resourceRepository.save(resource);

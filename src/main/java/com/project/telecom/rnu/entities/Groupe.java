@@ -3,6 +3,7 @@ package com.project.telecom.rnu.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,9 @@ public class Groupe {
     @GeneratedValue(strategy = GenerationType.TABLE)
     Long id;
     String nom;
-    @ManyToMany
-    List<Student> students;
+    @ManyToMany(mappedBy = "groupes")
+    List<Student> students = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    List<Creneau> creneaux = new ArrayList<>();
 }

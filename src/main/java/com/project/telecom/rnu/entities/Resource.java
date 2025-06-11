@@ -18,6 +18,7 @@ public class Resource {
     Long id;
     String libelle;
 
-    @OneToMany
+    @OneToMany(mappedBy = "resource", cascade = CascadeType.REMOVE, orphanRemoval = true)
     List<Creneau> creneaux = new ArrayList<>();
+
 }

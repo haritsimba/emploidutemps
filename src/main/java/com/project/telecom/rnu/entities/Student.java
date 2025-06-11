@@ -16,7 +16,7 @@ public class Student extends User {
 
     @ManyToMany
     @JsonIgnoreProperties("students")
-    private List<Groupe> groupes = new ArrayList<>()    ;
+    private List<Groupe> groupes = new ArrayList<>();
 
     public Student(String username, String email, String password, String role, List<Groupe> groupes) {
         super(null, username, email, password, role);
